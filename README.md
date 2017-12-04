@@ -1,5 +1,11 @@
 # Why Python?
 
+Source from [This Site] (https://github.com/jasonstrimpel/PyData-Meetup/blob/master/Equity%20Option%20Implied%20Volatility%20Analytics%20with%20Python.ipynb)
+Python has become an increasingly important tool in the domain of quantitative and algorithmic trading and research. Users range from senior quantitative analysts and researchings pricing complex derivatives using numerical techniques all the way to the retail trader just getting started. This talk will cover the basics of pricing "plain vanilla" options on listed equities and dive into some analysis of the unobserved feature of listed equity options known as implied volatility.
+
+In this talk, we'll learn a bit about Black-Scholes model, the derived option pricing formula and the "greeks" and how to code it all in Python. I'll then demonstrate how to gather options data using Pandas and apply various transformations to obtain the theoretical value of the option and the associated greeks. We'll then extend the talk to discuss implied volatility and show how to use Numpy methods to compute implied volatility and model missing and bad values using interpolation. Finally, we'll use the results to visualize the so-called volatility skew and term structure to help inform potential trading decisions.
+
+# Getting Option Values
 ```
 import numpy as np
 import pandas as pd
@@ -12,6 +18,7 @@ goog = web.DataReader('GOOG', data_source = 'google', start = '3/14/2009', and '
 
 
 To learn Coding
+
 ## Monte Carlo Simulation for Options
 Suppose we have the following numerical parameter values for the valuation:
 
@@ -50,6 +57,7 @@ print ("Value of the European Call Option %5.3f%" C0)
 ```
 > Value of the European Call Option 4.080
 
+# Two Approaches for getting Sigma
 
 ## Historical Volatility
 
@@ -93,7 +101,8 @@ def bsm_vega(S0, K, T, r, sigma):
   d1 = (log(S0/K)+(r+0.5*sigma**2)*T)/(sigma*sqrt(T))
   vega = S0 * stats.norm.cdf(d1, 0.0, 1.0) * sqrt(T)
   return (vega)
- 
+```
+
 Implied Volatility function:
 
 ```
