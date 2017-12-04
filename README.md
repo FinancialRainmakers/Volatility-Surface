@@ -10,3 +10,4 @@ Constant, riskless short rate r = 5%
 Constant Volatility sigma = 20%
 
 Black-Scholes-Merton (1973) index level at maturity
+d
