@@ -39,21 +39,70 @@ from numpy import *
 I = 100000 # number of iteration
 
 z = random.standard_normal(I)
-ST = S0 * exp(r-05 * sigma ** 2) * T + sigma * sqrt(T) * z)
+ST = S0 * exp((r-0.5 * sigma ** 2) * T + sigma * sqrt(T) * z)
 hT = maximum (ST - K, 0)
 C0 = exp(-r * T) * sum(hT) / I
 ```
 
 Print the Results:
 ```
-print ("Value of the European Call Option %5.3f % C0")
+print ("Value of the European Call Option %5.3f%" C0)
 ```
-
+> Value of the European Call Option 4.080
 
 
 ## Historical Volatility
 
+
+```
+import numpy as np
+import pandas as pd
+from pandas_datareader import data
+
+KS200 = data.DataReader("KRX:KOSPI200", "google")
+KS200.head()
+
+KS200['Log_Ret'] = np.log(KS200['Close'] / KS200['Close'].shift(1))
+KS200['Volatility'] = pd.rolling_std(KS200['Log_Ret'],
+window=252) * np.sqrt(252)
+
+KS200[['Close', 'Volatility']].plot(subplots=True, color='blue',
+figsize=(8, 6))
+```
+
 ## Implied Volatility
+
+Black-Scholes-Merton (1973) functions:
+```
+def bsm_call_value (S0, K, T, r, sigma):
+  from math import log, sqrt, exp
+  from scipy import stats
+  S0 = float(S0)
+  d1 = (log(S0/K)+(r+0.5*sigma**2)*T)/(sigma*sqrt(T))
+  d2 = (log(S0/K)+(r-0.5*sigma**2)*T)/(sigma*sqrt(T))
+  value = (S0 * stats.norm.cdf(d1,0.0,1.0) - K * exp(-r*T) * stats.norm.cdf(d2,0.0,1.0))
+  return (value)
+```
+
+Vega functions:
+```
+def bsm_vega(S0, K, T, r, sigma):
+  from math import log, sqrt
+  from scipy import stats
+  S0 = float(S0)
+  d1 = (log(S0/K)+(r+0.5*sigma**2)*T)/(sigma*sqrt(T))
+  vega = S0 * stats.norm.cdf(d1, 0.0, 1.0) * sqrt(T)
+  return (vega)
+ 
+Implied Volatility function:
+
+```
+def bsm_call_imp_vol(S0, K, T, r, C0, sigma_est, it=100):
+  for i in range (it):
+    sigma_est -= ((bsm_call_value(S0,K,T,r,sigma_est)-C0) / bsm_vega(S0,K,T,r,sigma_est))
+  return (sigma_est)
+```
+
 
 ### Volatility Smile
 
