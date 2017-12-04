@@ -1,4 +1,16 @@
-# Volatility-Surface
+# Why Python?
+
+```
+import numpy as np
+import pandas as pd
+import pandas.to.data as web
+
+goog = web.DataReader('GOOG', data_source = 'google', start = '3/14/2009', and '4/14/2014')
+
+
+```
+
+
 To learn Coding
 ## Monte Carlo Simulation for Options
 Suppose we have the following numerical parameter values for the valuation:
