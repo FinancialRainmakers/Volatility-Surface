@@ -11,7 +11,7 @@ Suppose we have the following numerical parameter values for the valuation:
 
 Black-Scholes-Merton (1973) index level at maturity
 
-Input Codes:
+Input Parameters:
 ```
 S0 = 100
 K = 105
@@ -19,6 +19,25 @@ T = 1.0
 r = 0.05
 sigma = 0.1
 ```
+
+Valuation Algorithm:
+```
+from numpy import *
+
+I = 100000 # number of iteration
+
+z = random.standard_normal(I)
+ST = S0 * exp(r-05 * sigma ** 2) * T + sigma * sqrt(T) * z)
+hT = maximum (ST - K, 0)
+C0 = exp(-r * T) * sum(hT) / I
+```
+
+Print the Results:
+```
+print ("Value of the European Call Option %5.3f % C0")
+```
+
+
 
 ## Historical Volatility
 
