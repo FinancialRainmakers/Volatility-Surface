@@ -1,13 +1,20 @@
 # Volatility-Surface
 To learn Coding
 
+Suppose we have the following numerical parameter values for the valuation:
 
-# Monte Carlo Simulation
-
-
-# Historical Volatility
+Initial Stock Index Level S0 = 100
 
 
-# Implied Volatility
+
+
+
+Monte Carlo Simulation
+
+
+Historical Volatility
+
+
+Implied Volatility
 
 
