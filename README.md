@@ -6,19 +6,25 @@ Python has become an increasingly important tool in the domain of quantitative a
 
 In this talk, we'll learn a bit about Black-Scholes model, the derived option pricing formula and the "greeks" and how to code it all in Python. I'll then demonstrate how to gather options data using Pandas and apply various transformations to obtain the theoretical value of the option and the associated greeks. We'll then extend the talk to discuss implied volatility and show how to use Numpy methods to compute implied volatility and model missing and bad values using interpolation. Finally, we'll use the results to visualize the so-called volatility skew and term structure to help inform potential trading decisions.
 
-# Getting Option Values
+# Coding Example : Drawing Apple Stock Prices
 ```
-import numpy as np
+import datetime as dt
+import matplotlib.pyplot as plt
+from matplotlib import style
 import pandas as pd
-import pandas.to.data as web
+import pandas_datareader.data as web
+style.use('ggplot')
 
-goog = web.DataReader('GOOG', data_source = 'google', start = '3/14/2009', and '4/14/2014')
+start = dt.datetime(2000, 1, 1)
+end = dt.datetime(2016, 12, 31)
 
+df = web.DataReader('AAPL', "yahoo", start, end)
 
+print(df.head())
+
+df['Adj Close'].plot()
+plt.show()
 ```
-
-
-To learn Coding
 
 ## Monte Carlo Simulation for Options
 Suppose we have the following numerical parameter values for the valuation:
@@ -27,7 +33,7 @@ Suppose we have the following numerical parameter values for the valuation:
 - Strike Price of the European Call Option K = 105
 - Time-to-maturity T = 1 Year
 - Constant, riskless short rate r = 5%
-- Constant Volatility sigma = 20%
+- Constant Volatility sigma = 10%
 
 Black-Scholes-Merton (1973) index level at maturity
 
@@ -60,7 +66,7 @@ print ("Value of the European Call Option %5.3f%" C0)
 
 # Two Approaches for getting Sigma
 
-## Historical Volatility
+## Historical Volatility (ERROR)
 
 
 ```
