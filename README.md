@@ -25,6 +25,8 @@ print(df.head())
 df['Adj Close'].plot()
 plt.show()
 ```
+![figure_1-1](https://user-images.githubusercontent.com/33922653/33591982-06020ba8-d9cc-11e7-800e-a590e82379fa.png)
+
 
 # Monte Carlo Simulation for Options
 Suppose we have the following numerical parameter values for the valuation:
