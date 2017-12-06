@@ -68,7 +68,7 @@ print ("Value of the European Call Option %5.3f%" C0)
 
 # Two Approaches for getting Sigma
 
-## Historical Volatility (ERROR)
+## Historical Volatility
 
 
 ```
@@ -160,8 +160,8 @@ ax.legend(loc='upper center',
 # display plot
 fig.tight_layout()
 fig.show()
-
 ```
+![spyder](https://user-images.githubusercontent.com/33922653/33655141-9e592352-dab5-11e7-8a62-de7d792dc0a8.png)
 
 ## Implied Volatility
 
