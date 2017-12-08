@@ -200,7 +200,6 @@ def bsm_call_imp_vol(S0, K, T, r, C0, sigma_est, it=100):
 ```
 Source from [This Site] (http://webcache.googleusercontent.com/search?q=cache:29VTaDw1YmMJ:www.kafo.or.kr/board_common/file_download.asp%3FBoard_Key%3D351%26File_Key%3D376%26flag%3D1+&cd=1&hl=ko&ct=clnk&gl=kr)
 
-Pictures of Examples using KOSPI 200 Options
 
 ```
 from pandas_datareader import Options
@@ -272,6 +271,8 @@ plt.title('Skewness smile (skew)')
 plt.xlabel('Exercise Price')
 plt.ylabel('Implied Volatility')
 ```
+
+Pictures of Examples using KOSPI 200 Options
 
 ### Volatility Smile
 
