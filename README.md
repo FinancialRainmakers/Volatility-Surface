@@ -163,7 +163,7 @@ ax.legend(loc='upper center',
 fig.tight_layout()
 fig.show()
 ```
-![spyder](https://user-images.githubusercontent.com/33922653/33655141-9e592352-dab5-11e7-8a62-de7d792dc0a8.png)
+![dd](https://user-images.githubusercontent.com/33922653/33764540-19b272ee-dc58-11e7-83c4-cd2a779e6b22.png)
 
 ## Implied Volatility
 
