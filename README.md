@@ -50,7 +50,7 @@ sigma = 0.1
 
 Valuation Algorithm:
 ```
-import numpy as np
+<span style="color:red">some import numpy as np
 
 I = 100000 # number of iteration
 
