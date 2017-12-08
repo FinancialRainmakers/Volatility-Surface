@@ -228,7 +228,7 @@ def implied_vol_call_min(S,X,T,r,c):
             k=i
     return implied_vol
 
-# Step 2: input area
+<font color="red">Status: **#Step 2: input area**</font>
 ticker='^GSPC'
 exp_date=datetime.date(2017,12,8) # first try not exact
 r=0.0003 # estimate
