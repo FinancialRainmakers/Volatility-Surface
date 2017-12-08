@@ -68,6 +68,8 @@ print ("Value of the European Call Option %5.3f%" C0)
 
 # Two Approaches for getting Sigma
 
+When talking about volatility, people often relate to “realized volatility” and “implied volatility.” The former is calculated from return data, which reflects more of the past and current status, whereas the latter is calculated from options data, which reflects more on the investor’s expectations for the future.
+
 ## Historical Volatility
 
 
@@ -202,12 +204,41 @@ Pictures of Examples using KOSPI 200 Options
 
 ### Volatility Smile
 
+As in stock or foreign exchange markets, you will notice the so-called
+volatility smile, which is most pronounced for the shortest maturity and which becomes
+a bit less pronounced for the longer maturities:
+
 ![1](https://user-images.githubusercontent.com/33922653/33751221-d2d57726-dc1c-11e7-9256-459114c2031b.png)
 
 ### Volatility Term Structure
+
+Taking VIX as an example:
+It suggests the market’s expectation on the future volatility. Since volatility is a measure of systematic risk, the VIX term structure suggests the trend of future market risk. If the VIX is upward-sloping, it implies that investors expect to see the volatility (risk) of the market going up in the future. 
+
+If the VIX is downward sloping, it indicates that investors expect to see the volatility of the market going down in the future
 
 ![2](https://user-images.githubusercontent.com/33922653/33751229-e239da7c-dc1c-11e7-9894-202a342abfe7.png)
 
 ### Volatility Surface
 
+The volatility surface is a three-dimensional plot of stock option implied volatility seen to exist due to discrepancies with how the market prices stock options and what stock option pricing models say that the correct prices should be. 
+
 ![3](https://user-images.githubusercontent.com/33922653/33751240-f2069620-dc1c-11e7-8a21-fb755446a56b.png)
+
+
+
+#### BSM Assumptions
+
+1. The underlying stock does not pay a dividend and never will.
+
+2. The option must be European-style.
+
+3. Financial markets are efficient.
+
+4. No commissions are charged on the trade.
+
+5. Interest rates remain constant.
+
+6. The underlying stock returns are log-normally distributed.
+
+Read more: The Volatility Surface Explained | Investopedia https://www.investopedia.com/articles/stock-analysis/081916/volatility-surface-explained.asp#ixzz50dq1TrHA
