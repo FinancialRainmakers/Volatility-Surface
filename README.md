@@ -202,6 +202,12 @@ Pictures of Examples using KOSPI 200 Options
 
 ### Volatility Smile
 
+![1](https://user-images.githubusercontent.com/33922653/33751221-d2d57726-dc1c-11e7-9256-459114c2031b.png)
+
 ### Volatility Term Structure
 
+![2](https://user-images.githubusercontent.com/33922653/33751229-e239da7c-dc1c-11e7-9894-202a342abfe7.png)
+
 ### Volatility Surface
+
+![3](https://user-images.githubusercontent.com/33922653/33751240-f2069620-dc1c-11e7-8a21-fb755446a56b.png)
