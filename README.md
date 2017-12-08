@@ -77,7 +77,7 @@ When talking about volatility, people often relate to “realized volatility” 
 from __future__ import division
 from pandas_datareader import data
 from datetime import datetime, timedelta
-import numpy as np
+<span style="color: green"> import </span> numpy as np
 import matplotlib.pyplot as plt
  
 # get stock ticker symbol from user
