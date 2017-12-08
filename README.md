@@ -50,14 +50,14 @@ sigma = 0.1
 
 Valuation Algorithm:
 ```
-from numpy import *
+import numpy as np
 
 I = 100000 # number of iteration
 
-z = random.standard_normal(I)
-ST = S0 * exp((r-0.5 * sigma ** 2) * T + sigma * sqrt(T) * z)
-hT = maximum (ST - K, 0)
-C0 = exp(-r * T) * sum(hT) / I
+z = np.random.standard_normal(I)
+ST = S0 * np.exp((r-0.5 * sigma ** 2) * T + sigma * np.sqrt(T) * z)
+hT = np.maximum (ST - K, 0)
+C0 = np.exp(-r * T) * sum(hT) / I
 ```
 
 Print the Results:
