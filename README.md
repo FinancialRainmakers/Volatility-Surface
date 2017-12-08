@@ -50,7 +50,7 @@ sigma = 0.1
 
 Valuation Algorithm:
 ```
-<font color="red"> import numpy as np
+import numpy as np
 
 I = 100000 # number of iteration
 
@@ -228,7 +228,7 @@ def implied_vol_call_min(S,X,T,r,c):
             k=i
     return implied_vol
 
-<font color="red">Status: **#Step 2: input area**</font>
+# Step 2: input area
 ticker='^GSPC'
 exp_date=datetime.date(2017,12,8) # first try not exact
 r=0.0003 # estimate
